@@ -1,4 +1,8 @@
 {
   "projectId": "e4vvfq",
-  "baseUrl": "https://app.convosight.com"
+  "baseUrl": "https://app.convosight.com",
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporterOpts.json"
+  }
 }

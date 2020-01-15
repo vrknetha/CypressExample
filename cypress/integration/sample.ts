@@ -51,20 +51,20 @@ describe('TypeScript', () => {
 
     });
     it('Verify login using valid credentials', () => {
-        cy.Login('csadmin@convosight.com', 'EXb5Xj%Y6');
+        cy.Login('***********', '************');
     });
     it('Verify the incorrect username or password message', () => {
         cy.server();
         cy.route({
             method: 'POST',
-            url: 'https://cognito-identity.us-east-1.amazonaws.com/',
+            url: '*******************************',
             status: 400,
             headers: {
                 'x- amz - target': 'AWSCognitoIdentityProviderService.RespondToAuthChallenge'
             },
             response: { "__type": "NotAuthorizedException", "message": "Incorrect username or password." }
         }).as('login-call');
-        cy.Login('csadmin@convosight.com', 'EXb5Xj%Y6');
+        cy.Login('**************', '***********');
         cy.wait('@login-call')
             .get('.error-txt').then(ele => {
                 expect(ele.text).equal('Incorrect username or password.')
