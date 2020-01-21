@@ -18,14 +18,24 @@
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 /// <reference types="cypress" />
-Cypress.Commands.add('Login', (username, password) => {
-    cy.get('[formcontrolname="email"]')
+Cypress.Commands.add('login', (username = 'test.person', password = '12345') => {
+    cy.get('input[name="Username"]')
     .type(username)
-    .get('[formcontrolname="password"]')
+    .get('input[name="Password"]')
     .type(password)
     .get('[type="submit"]')
     .click();
 })
+
+Cypress.Cookies.defaults({
+    whitelist: ['MMP.Auth.AccessToken',
+    'MMP.Auth.LoginToken',
+    '__cfduid',
+    '__cfduid',
+    '__lm',
+    '__stripe_mid',
+    'clientconnectionid']
+  })
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
