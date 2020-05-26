@@ -18,7 +18,7 @@
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 /// <reference types="cypress" />
-Cypress.Commands.add('login', (username = 'test.person', password = '12345') => {
+Cypress.Commands.add('login', (username = '******8', password = '****') => {
     cy.get('input[name="Username"]')
     .type(username)
     .get('input[name="Password"]')
