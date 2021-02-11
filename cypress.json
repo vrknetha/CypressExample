@@ -1,8 +1,8 @@
 {
   "projectId": "e4vvfq",
   "baseUrl": "https://2156.growthzonedev.com/",
-  "username": "test.person",
-  "password": "12345",
+  "username": "test.****",
+  "password": "***",
   "chromeWebSecurity": false,
   "reporter": "cypress-multi-reporters",
   "defaultCommandTimeout": 5000,
